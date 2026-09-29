@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+  </head>
+  <body>
+    <main>
+      <h1>Battleship</h1>
+      <p id="message"></p>
+            <div id="setup-controls" class="controls">
+        <button id="rotate" type="button">Rotate (horizontal)</button>
+        <button id="randomize" type="button">Randomize</button>
+        <button id="reset-fleet" type="button">Reset</button>
+        <button id="start-game" type="button" disabled>Start Game</button>
+      </div>
+
+      <div class="boards">
+        <section>
+          <h2>Your fleet</h2>
+          <div id="player-board" class="board"></div>
+        </section>
+        <section>
+          <h2>Enemy waters</h2>
+          <div id="enemy-board" class="board"></div>
+        </section>
+      </div>
+
+      <button id="new-game" type="button">New Game</button>
+    </main>
+  </body>
+</html>

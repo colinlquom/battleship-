@@ -1,0 +1,116 @@
+:root {
+  --cell: 34px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b1d2e;
+  color: #e8f1f8;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+#message {
+  min-height: 1.5em;
+}
+
+.boards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, var(--cell));
+  grid-template-rows: repeat(10, var(--cell));
+  gap: 2px;
+}
+
+.cell {
+  width: var(--cell);
+  height: var(--cell);
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: #1c4a6e;
+  color: #9fb7c9;
+  cursor: pointer;
+}
+
+.cell:hover:not(:disabled) {
+  background: #2b6a99;
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.ship {
+  background: #7d8b99;
+}
+
+.cell.hit {
+  background: #d64545;
+}
+
+.cell.miss {
+  background: #2b3f50;
+}
+
+.cell.miss::after {
+  content: "•";
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.controls button,
+button#new-game {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #2b6a99;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.controls button:hover:not(:disabled),
+button#new-game:hover {
+  background: #3a82b8;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cell.preview-ok {
+  background: #3f9c6a !important;
+}
+
+.cell.preview-bad {
+  background: #b8593f !important;
+}
